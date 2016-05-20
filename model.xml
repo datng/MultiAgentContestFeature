@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		<properties/>
+		<struct>
+			<and mandatory="true" name="Simulation">
+				<description>
+					
+				</description>
+				<feature mandatory="true" name="Agent">
+					<description>
+						
+					</description>
+				</feature>
+				<and abstract="true" mandatory="true" name="Role">
+					<description>
+						
+					</description>
+					<feature name="Acheteur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Assembleur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Stockeur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Retireur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Echangeur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Deposeur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Rechargeur">
+						<description>
+							
+						</description>
+					</feature>
+					<feature mandatory="true" name="Job_deliver">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Job_creator">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Job_Selector">
+						<description>
+							
+						</description>
+					</feature>
+				</and>
+				<feature mandatory="true" name="Environment">
+					<description>
+						
+					</description>
+				</feature>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
