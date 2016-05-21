@@ -6,11 +6,31 @@
 				<description>
 					
 				</description>
-				<feature mandatory="true" name="Agent">
+				<or abstract="true" mandatory="true" name="Agent">
 					<description>
 						
 					</description>
-				</feature>
+					<feature mandatory="true" name="Car">
+						<description>
+							
+						</description>
+					</feature>
+					<feature mandatory="true" name="Drone">
+						<description>
+							
+						</description>
+					</feature>
+					<feature mandatory="true" name="Motorcycle">
+						<description>
+							
+						</description>
+					</feature>
+					<feature mandatory="true" name="Truck">
+						<description>
+							
+						</description>
+					</feature>
+				</or>
 				<and abstract="true" mandatory="true" name="Role">
 					<description>
 						
@@ -45,12 +65,12 @@
 							
 						</description>
 					</feature>
-					<feature name="Rechargeur">
+					<feature mandatory="true" name="Rechargeur">
 						<description>
 							
 						</description>
 					</feature>
-					<feature mandatory="true" name="Job_deliver">
+					<feature name="Job_deliver">
 						<description>
 							
 						</description>
@@ -73,7 +93,38 @@
 				</feature>
 			</and>
 		</struct>
-		<constraints/>
+		<constraints>
+			<rule>
+				<imp>
+					<var>Stockeur</var>
+					<var>Retireur</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Retireur</var>
+					<var>Stockeur</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Job_deliver</var>
+					<var>Job_Selector</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Job_Selector</var>
+					<var>Job_deliver</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Job_deliver</var>
+					<var>Acheteur</var>
+				</imp>
+			</rule>
+		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="false"/>
