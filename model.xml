@@ -6,7 +6,7 @@
 				<description>
 					
 				</description>
-				<or abstract="true" mandatory="true" name="Agent">
+				<or mandatory="true" name="Agent">
 					<description>
 						
 					</description>

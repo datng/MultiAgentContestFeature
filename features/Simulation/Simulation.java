@@ -1,4 +1,3 @@
-package massim;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -6,7 +5,6 @@ import java.util.Map;
 
 import massim.javaagents.Agent;
 import massim.javaagents.agents.CityUtil;
-import massim.javaagents.agents.MyAgent;
 import eis.EILoader;
 import eis.EnvironmentInterfaceStandard;
 import eis.exceptions.NoEnvironmentException;
