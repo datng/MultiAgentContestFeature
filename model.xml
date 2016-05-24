@@ -2,35 +2,10 @@
 	<featureModel>
 		<properties/>
 		<struct>
-			<and mandatory="true" name="Simulation">
+			<and mandatory="true" name="MultiAgentContestFeature">
 				<description>
 					
 				</description>
-				<or mandatory="true" name="Agent">
-					<description>
-						
-					</description>
-					<feature mandatory="true" name="Car">
-						<description>
-							
-						</description>
-					</feature>
-					<feature mandatory="true" name="Drone">
-						<description>
-							
-						</description>
-					</feature>
-					<feature mandatory="true" name="Motorcycle">
-						<description>
-							
-						</description>
-					</feature>
-					<feature mandatory="true" name="Truck">
-						<description>
-							
-						</description>
-					</feature>
-				</or>
 				<and abstract="true" mandatory="true" name="Role">
 					<description>
 						
@@ -85,7 +60,32 @@
 							
 						</description>
 					</feature>
+					<feature name="TeamManager">
+						<description>
+							
+						</description>
+					</feature>
+					<feature name="Vagabond">
+						<description>
+							
+						</description>
+					</feature>
 				</and>
+				<alt mandatory="true" name="Organization">
+					<description>
+						
+					</description>
+					<feature mandatory="true" name="Dummy">
+						<description>
+							
+						</description>
+					</feature>
+					<feature mandatory="true" name="InitialTeamManager">
+						<description>
+							
+						</description>
+					</feature>
+				</alt>
 				<feature mandatory="true" name="Environment">
 					<description>
 						
@@ -96,32 +96,44 @@
 		<constraints>
 			<rule>
 				<imp>
-					<var>Stockeur</var>
-					<var>Retireur</var>
+					<var>Dummy</var>
+					<conj>
+						<var>Rechargeur</var>
+						<var>Vagabond</var>
+					</conj>
 				</imp>
 			</rule>
 			<rule>
 				<imp>
-					<var>Retireur</var>
-					<var>Stockeur</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>Job_deliver</var>
-					<var>Job_Selector</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>Job_Selector</var>
-					<var>Job_deliver</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>Job_deliver</var>
-					<var>Acheteur</var>
+					<var>InitialTeamManager</var>
+					<conj>
+						<var>Acheteur</var>
+						<conj>
+							<var>Assembleur</var>
+							<conj>
+								<var>Environment</var>
+								<conj>
+									<var>Job_creator</var>
+									<conj>
+										<var>Job_deliver</var>
+										<conj>
+											<var>Job_Selector</var>
+											<conj>
+												<var>Rechargeur</var>
+												<conj>
+													<var>Retireur</var>
+													<conj>
+														<var>Stockeur</var>
+														<var>TeamManager</var>
+													</conj>
+												</conj>
+											</conj>
+										</conj>
+									</conj>
+								</conj>
+							</conj>
+						</conj>
+					</conj>
 				</imp>
 			</rule>
 		</constraints>
