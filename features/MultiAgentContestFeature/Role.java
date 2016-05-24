@@ -1,8 +1,9 @@
-public enum Role{
+public enum Role {
 	Acheteur,
 	Assembleur,
 	Deposeur,
 	Echangeur,
+	Explorateur,
 	JobCreator,
 	JobDeliver,
 	JobSelector,
